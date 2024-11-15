@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Frontier - Contact Us</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/modal.js" defer></script>
+    <link rel="icon" type="image/png" href="images/smollogo.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="logo"><img src="images/smollogo.png" alt="Sweet Frontier"></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="history.html">History</a></li>
+                <li class="disabled_link">Contact Us</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="centerblock">
+            <h1>Contact Us</h1><br>
+            <p class="left-marginy">Email: <a href="mailto:no-u@this-is-not-a-real-email.com">no-u@this-is-not-a-real-email.com</a></p>
+        </section>
+        <section class="centerblock">
+            <p>Found a bug?</p>
+            <button id="submitty" class="submitter">Report a Bug</button>
+            <div class="modal">
+                <div class="modalContent">
+                    <button class="closeButton">&times;</button>
+                    <h2 class="centery">Report a Bug</h2>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="d0eed248-88c6-4367-8e00-d10b9355a716">
+                    
+                        <br>
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Name Here" required>
+                        <label for="contactinfo">Your Contact Info:</label>
+                        <input type="text" id="contactinfo" name="Contact Info" placeholder="Email, Phone Number, etc. in case we need clarification" required>
+                        <label for="game">Game Name:</label>
+                        <select id="game" name="game" required>
+                            <option value="" disabled selected hidden>- Select a Game -</option>
+                            <option value="fish">Fish</option>
+                            <option value="joey">The Joey's Adventure</option>
+                            <option value="nbslrr">Natural Barricading Spirit-Laden Redwood Reinforcement</option>
+                            <option value="lifetime">Once in a Lifetime</option>
+                            <option value="onelap">One Lap</option>
+                            <option value="orbitaloop">OrbitaLoop</option>
+                            <option value="projectprince">Project Prince</option>
+                            <option value="roguescience">Rogue Science</option>
+                        </select>
+                        
+                        <label for="bug">Bug Description:</label>
+                        <textarea id="bug" name="bug" rows="4" placeholder="When I click play the game explodes" required></textarea>
+                        <br>
+                    
+                        <!-- Honeypot Spam Protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    
+                        <!-- By default redirects to special page so instead just redirect here -->
+                        <!--input type="hidden" name="redirect" value="https://webpages.charlotte.edu/jliu62/SweetFrontier/contact.html"-->
+                        <!--actually i change my mind i think a confirmation screen is good. also i dont want to program my own confirmation screen rn-->
+                        <button type="submit" class="submitter">Submit Anyway</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2022 Sweet Frontier. No rights reserved.</p>
+        <p>For any employee management ethical concerns, please be reassured by our <a href="working-conditions.html">Employee Working Conditions</a></p>
+        <p>For any issues, please feel free to <a href="contact.html">Contact Us</a></p>
+    </footer>
+</body>
+</html>

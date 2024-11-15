@@ -1,0 +1,455 @@
+/*doc as a whole*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*formerly ff8989*/
+    --backcolor:#ff64b1;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color:var(--backcolor);
+
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1;
+    background-image:url("../images/background.png");
+    background-attachment: fixed;
+    background-color:#ffdece
+}
+h5 {
+    color: #888;
+}
+.biglogoy {
+    background-image:url("../images/biglogo.png");
+    height:33vw;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color:#ddded9;
+}
+@media (min-width: 800px) {
+    .biglogoy {
+        height:20vw;
+        background-size:contain;
+    }
+}
+
+
+/*navbar*/
+nav {
+    padding: 0em 3em;
+    background-color: var(--backcolor);
+    display: flex;
+    border-bottom: 2px solid #ffb7b7;
+    user-select: none;
+}
+@media (max-width: 635px) {
+    /*shrink when too big.
+    in chrome i found out that exactly 635 pixels
+    is when the screen starts to be too small*/
+    nav {
+        text-align: center;
+    }
+}
+nav li {
+    user-select: none;
+    display: inline-block;
+    margin:2em 0em;
+}
+.logo {
+    margin:0;
+}
+nav a {
+    color: #fff;
+    background-color: var(--backcolor);
+    text-decoration: none;
+    padding: 2em 1.5em;
+    border-radius: 5px;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+nav a:hover {
+    filter:brightness(85%) saturate(120%);
+}
+nav a:active {
+    filter:brightness(80%) saturate(120%);
+}
+nav .disabled_link {
+    color: #555;
+    background-color: var(--backcolor);
+    filter:brightness(75%);
+    padding: 2em 1.5em;
+    border-radius:2px;
+    margin:0;
+    white-space: nowrap;
+}
+nav img {
+    pointer-events: none;
+    height: 75px;
+    vertical-align: middle;
+    margin-right: 2em;
+}
+header hr {
+    border-color: #ff4d4d;
+}
+
+
+/*footer*/
+footer {
+    background-color: var(--backcolor);
+    padding: 2em 0em;
+    border-top: 2px solid #ffb7b7;
+    text-align: center;
+    font-size: 0.8em;
+}
+footer a {
+    color:purple;
+    text-decoration: none;
+}
+footer a:hover {
+    color:#510051;
+    text-decoration: underline;
+}
+
+
+/*misc style stuff*/
+.centerblock {
+    background-color:#fff;
+    border-radius:20px;
+    width:90%;
+    max-width:800px;
+    padding:2em;
+    margin: 1em auto;
+}
+.playbutton {
+    background-color: #00b700;
+    font-weight: bold;
+    color: white;
+    padding: 1em 2em;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.1s;
+}
+.playbutton:hover {
+    background-color: #008f00;
+}
+.playbutton:active {
+    background-color: #007600;
+}
+button:hover {
+    cursor:pointer;
+}
+.experience {
+    color:yellow;
+}
+.experiencebutton {
+    background-color: #0000b7;
+    font-weight: bold;
+    color: white;
+    padding: 1em 2em;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.1s;
+}
+.experiencebutton:hover {
+    background-color: #00008f;
+}
+.experiencebutton:active {
+    background-color: #000076;
+}
+.left-marginy {
+    margin-left:20px;
+}
+.centery {
+    text-align:center;
+}
+
+
+/*game table*/
+.gametable {
+    background-color: #000d;
+    color:white;
+    text-align: center;
+    width:95%;
+    max-width:1200px;
+    border-radius: 20px;
+    padding: 2em;
+    margin: 2em auto;
+}
+.gametable h1 {
+    font-size: 4em;
+}
+.gametable table {
+    width:100%;
+}
+.gametable img {
+    border:2px solid white;
+    max-width: 90%;
+    margin: 1em 0;
+}
+
+.gametable a img {
+    transform: scale(1);
+    filter: brightness(95%);
+    transition: 0.2s;
+    width: 100%;
+}
+.gametable a img:hover {
+    transform: scale(1.05);
+    filter: brightness(120%);
+}
+.gametable td {
+    width:25%;
+    height:25%;
+}
+
+.game {
+    height:100vw;
+    max-height:900px;
+    text-align:justify;
+    
+    overflow-y:auto;
+}
+
+/*inputs*/
+input {
+    width:100%;
+    margin-bottom:2em;
+    padding: 0.5rem;
+    border-radius:5px;
+}
+textarea {
+    width:100%;
+    resize: none;
+    margin-bottom:2em;
+    padding: 0.5rem;
+    border-radius:5px;
+}
+select {
+    width:100%;
+    margin-bottom:2em;
+    padding: 0.5rem;
+    border-radius:5px;
+}
+
+.submitter {
+    background-color:#0000b7;
+    border-color:#0000b7;
+    padding: 1em;
+    font-size:1.5em;
+    font-weight:bold;
+    color:white;
+    transition:0.2s;
+    border-radius:5px;
+    width:100%;
+}
+.submitter:hover {
+    background-color:#00008f;
+    border-color:#00008f;
+}
+
+/* CAROUSEL */
+.carouselContainer {
+    width: 100%;
+    height: 0;
+    padding-bottom: 38%;
+    margin: 1rem 0;
+    list-style-type:none;
+
+    position:relative;
+    overflow:hidden;
+    background-color:black;
+}
+.carouselItem {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    transition: 0.5s;
+    opacity:0;
+}
+.carouselItem > img {
+    display: block;
+    position: relative;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+
+    border: none;
+    margin-top:0px;
+    z-index:0;
+}
+.carouselItem.active {
+    opacity:1;
+    transition-delay: 0ms;
+    /*z index so that people can select the image*/
+    z-index:1;
+}
+
+.carouselbtn {
+    background:transparent;
+    border:none;
+    font-size:1.2rem;
+    font-weight:900;
+    color: #fff0;
+    position: absolute;
+    z-index:1;
+
+    width:5rem;
+    height:100%;
+
+    transition-duration: 0.2s;
+}
+.carouselbtn:hover {
+    color: #fff;
+}
+.carouselbtn.left {
+    left: 0;
+    padding: 0 20% 0 1rem;
+}
+.carouselbtn.right {
+    right: 0;
+    padding: 0 2rem 0 20%;
+}
+
+.carousel-nav {
+    display:flex;
+    justify-content:center;
+    position:absolute;
+    bottom:0.1rem;
+    gap: 0.5rem;
+
+    z-index:2;
+    left:50%;
+    transform:translateX(-50%);
+
+    padding:0.5rem;
+    background-color:#000c;
+    border-radius:1rem;
+}
+.nav-item {
+    height:11px;
+    width:11px;
+    background-color:#fff;
+    border-radius:50%;
+    opacity: 0.3;
+    transition: 300ms opacity ease-in-out;
+    cursor: pointer;
+}
+.nav-item.active {
+    opacity: 0.7;
+    cursor: default;
+}
+
+/* carousel animations */
+.enterright {
+    animation: enterright 0.4s cubic-bezier(0,.5,.5,1);
+    animation-fill-mode: forwards;
+}
+.exitright {
+    animation: enterright 0.4s;
+    animation-timing-function: /*cubic-bezier(.8,0,1,.5)*/cubic-bezier(0,.5,.5,1);
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+}
+@keyframes enterright {
+    from {
+        transform: translateX(30%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.enterleft {
+    animation: enterleft 0.4s cubic-bezier(0,.5,.5,1);
+    animation-fill-mode: forwards;
+}
+.exitleft {
+    animation: enterleft 0.4s /*cubic-bezier(.8,0,1,.5)*/cubic-bezier(0,.5,.5,1);
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+}
+@keyframes enterleft {
+    from {
+        transform: translateX(-30%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+
+/* modal */
+ /* The Modal (background) */
+.modal {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    overflow: auto;
+    z-index: 0;
+    transition: 0.3s ease-in-out;
+}
+.modalContent {
+    width: 80%;
+    margin: 2% auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+}
+button.closeButton {
+    position:absolute;
+    font-weight: bold;
+    font-size: 28px;
+    color: #000;
+    width: 2rem;
+    border:none;
+    border-radius:5px;
+}
+.closeButton:hover {
+    background-color:#999;
+}
+.centery {
+    text-align:center;
+}
+.modal.active {
+    display: block;
+    animation: grow 0.3s cubic-bezier(0,.5,.5,1);
+}
+.modal.shrinky {
+    display: block;
+    animation: shrink 0.3s cubic-bezier(0.5,0,1,0.5);
+    animation-fill-mode: forwards;
+}
+@keyframes grow {
+    from {
+        transform: scale(0) translate(0, -100%);
+    }
+    to {
+        transform: scale(1) translate(0, 0);
+    }
+}
+@keyframes shrink {
+    from {
+        transform: scale(1) translate(0, 0);
+    }
+    to {
+        transform: scale(0) translate(0, 100%);
+    }
+}
+
+/*skeletons*/
+.skeleton {
+    background-color: #ccc;
+    width:100%;
+}
